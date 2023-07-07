@@ -8,7 +8,7 @@ import { usePathname } from "next/navigation";
 
 function ContentList({ content }: { content: Content[] }) {
   return (
-    <div className="grid grid-cols-2 justify-items-center gap-x-2 gap-y-4 md:grid-cols-3 lg:grid-cols-4 lg:gap-x-3 lg:gap-y-3 2xl:grid-cols-5">
+    <div className="grid grid-cols-2 justify-items-center gap-x-2 gap-y-4 md:grid-cols-3 lg:grid-cols-4 lg:gap-x-3 lg:gap-y-3">
       {content.map((co) => (
         <Card key={co.id} content={co} />
       ))}

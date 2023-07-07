@@ -9,20 +9,25 @@ type FetchResult = {
   total_results: number;
 };
 
-async function getTVShows(category: string): Promise<FetchResult> {
-  const url = `https://api.themoviedb.org/3/tv/${
-    category ? category : "popular"
-  }?api_key=${process.env.TMDB_API}`;
-
+async function getTVShows(searchParams: {
+  category: string;
+  page: string;
+}): Promise<FetchResult> {
+  const { category, page } = searchParams;
+  const url = new URL(
+    `https://api.themoviedb.org/3/tv/${category ? category : "popular"}`
+  );
+  url.searchParams.append("page", page);
+  url.searchParams.append("api_key", process.env.TMDB_API as string);
   return (await fetch(url)).json();
 }
 
 export default async function TVShows({
-  searchParams: { category },
+  searchParams,
 }: {
-  searchParams: { category: string };
+  searchParams: { category: string; page: string };
 }) {
-  const data = await getTVShows(category);
+  const data = await getTVShows(searchParams);
 
   if (!data.results) {
     return (

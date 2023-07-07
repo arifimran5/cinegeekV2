@@ -1,5 +1,6 @@
 import Container from "@/components/Container";
 import ContentList from "@/components/ContentList";
+import FilterSidebar from "@/components/FilterSidebar";
 import { type Content } from "@/utils/types";
 
 type FetchResult = {
@@ -9,20 +10,25 @@ type FetchResult = {
   total_results: number;
 };
 
-async function getMovies(category: string): Promise<FetchResult> {
-  const url = `https://api.themoviedb.org/3/movie/${
-    category ? category : "popular"
-  }?api_key=${process.env.TMDB_API}`;
-
+async function getMovies(searchParams: {
+  category: string;
+  page: string;
+}): Promise<FetchResult> {
+  const { category, page } = searchParams;
+  const url = new URL(
+    `https://api.themoviedb.org/3/movie/${category ? category : "popular"}`
+  );
+  url.searchParams.append("page", page);
+  url.searchParams.append("api_key", process.env.TMDB_API as string);
   return (await fetch(url)).json();
 }
 
 export default async function Movies({
-  searchParams: { category },
+  searchParams,
 }: {
-  searchParams: { category: string };
+  searchParams: { category: string; page: string };
 }) {
-  const data = await getMovies(category);
+  const data = await getMovies(searchParams);
 
   if (!data.results) {
     return (
@@ -37,7 +43,14 @@ export default async function Movies({
     <main className="">
       <Container>
         <h1>Movies Page</h1>
-        <ContentList content={data.results} />
+        <div className="xl:gap-4 xl:grid xl:grid-cols-4">
+          <div className="hidden xl:block xl:col-span-1">
+            <FilterSidebar />
+          </div>
+          <div className="overflow-y-auto xl:col-span-3">
+            <ContentList content={data.results} />
+          </div>
+        </div>
       </Container>
     </main>
   );
