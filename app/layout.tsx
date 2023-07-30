@@ -1,13 +1,13 @@
-import { cn } from "@/utils/helper"
-import "./globals.css"
-import { Inter } from "next/font/google"
-import Header from "@/components/Header"
+import { cn } from '@/utils/helper'
+import './globals.css'
+import { Inter } from 'next/font/google'
+import Header from '@/components/Header/Header'
 
-const inter = Inter({ subsets: ["latin"] })
+const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: "Cingeek",
-  description: "Movie app",
+  title: 'Cingeek',
+  description: 'Movie app',
 }
 
 export default function RootLayout({
@@ -17,7 +17,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en'>
-      <body className={cn(inter.className, "")}>
+      <body className={cn(inter.className, '')}>
         {/* Navigation */}
         <Header />
         {children}

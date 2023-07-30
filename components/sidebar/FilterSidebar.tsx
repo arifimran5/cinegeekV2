@@ -48,7 +48,7 @@ function FilterSidebar({ genres }: { genres: Array<Genre> }) {
   }
 
   return (
-    <div className='sticky top-4 h-[90vh] border-2 px-4 py-4 rounded-md w-72'>
+    <div className='sticky top-4 h-[90vh] border-2 border-gray-100 px-4 py-4 rounded-md w-72'>
       <h2 className='text-2xl capitalize'>{pathname.substring(1)}</h2>
       <form className='mt-4'>
         {/* Sort Select Menu */}
@@ -78,7 +78,7 @@ function FilterSidebar({ genres }: { genres: Array<Genre> }) {
               onClick={() => handleGenreSelect(g.id)}
               className={cn(
                 'px-3 h-8 cursor-pointer text-sm border-[1px] border-input rounded-md',
-                'data-[active=true]:bg-blue-300 data-[active=true]:font-medium'
+                'data-[active=true]:bg-accent data-[active=true]:font-medium'
               )}
               key={g.id}
             >
@@ -99,7 +99,7 @@ function FilterSidebar({ genres }: { genres: Array<Genre> }) {
         <button
           onClick={handleSearch}
           type='submit'
-          className='w-full p-2 mt-4 rounded-md bg-gradient-to-br from-accent to-card ring-[2px] ring-gray-200/30 shadow'
+          className='w-full p-2 mt-4 rounded-md bg-accent ring-[2px] ring-gray-200/30 shadow'
         >
           Search
         </button>
