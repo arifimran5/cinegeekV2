@@ -1,6 +1,15 @@
 'use client'
 
-import { SearchIcon, X } from 'lucide-react'
+import {
+  CalendarDays,
+  PartyPopper,
+  Play,
+  SearchIcon,
+  TrendingUp,
+  Tv,
+  X,
+} from 'lucide-react'
+import Link from 'next/link'
 import { useState, ReactNode } from 'react'
 
 function MobileHeader({ children }: { children: ReactNode }) {
@@ -18,16 +27,40 @@ function MobileHeader({ children }: { children: ReactNode }) {
             <h3 className='font-medium'>Movies</h3>
             <div className='pl-4'>
               <p className='py-2 border-b-[1px] hover:bg-white/50 transition-all duration-100 hover:pl-1 border-gray-300/80 cursor-pointer'>
-                Popular
+                <Link
+                  className='flex items-center gap-3'
+                  href={`/movie?category=popular`}
+                >
+                  <PartyPopper size={19} />
+                  <span>Popular</span>
+                </Link>
               </p>
               <p className='py-2 border-b-[1px] hover:bg-white/50 transition-all duration-100 hover:pl-1 border-gray-300/80 cursor-pointer'>
-                Now Playing
+                <Link
+                  className='flex items-center gap-3'
+                  href={`/movie?category=now_playing`}
+                >
+                  <Play size={19} />
+                  <span>Now Playing</span>
+                </Link>
               </p>
               <p className='py-2 border-b-[1px] hover:bg-white/50 transition-all duration-100 hover:pl-1 border-gray-300/80 cursor-pointer'>
-                Upcoming
+                <Link
+                  className='flex items-center gap-3'
+                  href={`/movie?category=upcoming`}
+                >
+                  <CalendarDays size={19} />
+                  <span>Upcoming</span>
+                </Link>
               </p>
               <p className='py-2 border-b-[1px] hover:bg-white/50 transition-all duration-100 hover:pl-1 border-gray-300/80 cursor-pointer'>
-                Top Rated
+                <Link
+                  className='flex items-center gap-3'
+                  href={`/movie?category=top_rated`}
+                >
+                  <TrendingUp size={19} />
+                  <span>Top Rated</span>
+                </Link>
               </p>
             </div>
           </div>
@@ -35,16 +68,40 @@ function MobileHeader({ children }: { children: ReactNode }) {
             <h3 className='font-medium'>TV Shows</h3>
             <div className='pl-4'>
               <p className='py-2 border-b-[1px] hover:bg-white/50 transition-all duration-100 hover:pl-1 border-gray-300/80 cursor-pointer'>
-                Popular
+                <Link
+                  className='flex items-center gap-3'
+                  href={`/tv?category=popular`}
+                >
+                  <PartyPopper size={19} />
+                  <span>Popular</span>
+                </Link>
               </p>
               <p className='py-2 border-b-[1px] hover:bg-white/50 transition-all duration-100 hover:pl-1 border-gray-300/80 cursor-pointer'>
-                Now Playing
+                <Link
+                  className='flex items-center gap-3'
+                  href={`/tv?category=airing_today`}
+                >
+                  <Play size={19} />
+                  <span>Airing Today</span>
+                </Link>
               </p>
               <p className='py-2 border-b-[1px] hover:bg-white/50 transition-all duration-100 hover:pl-1 border-gray-300/80 cursor-pointer'>
-                Upcoming
+                <Link
+                  className='flex items-center gap-3'
+                  href={`/tv?category=on_the_air`}
+                >
+                  <Tv size={19} />
+                  <span>On TV</span>
+                </Link>
               </p>
               <p className='py-2 border-b-[1px] hover:bg-white/50 transition-all duration-100 hover:pl-1 border-gray-300/80 cursor-pointer'>
-                Top Rated
+                <Link
+                  className='flex items-center gap-3'
+                  href={`/tv?category=top_rated`}
+                >
+                  <TrendingUp size={19} />
+                  <span>Top Rated</span>
+                </Link>
               </p>
             </div>
           </div>

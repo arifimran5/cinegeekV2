@@ -118,7 +118,7 @@ function Header() {
                         className='flex items-center gap-3'
                         href={`/tv?category=on_the_air`}
                       >
-                        <CalendarDays size={19} />
+                        <Tv size={19} />
                         <span>On TV</span>
                       </Link>
                     </DropdownMenuItem>
