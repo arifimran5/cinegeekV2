@@ -49,21 +49,41 @@ function Header() {
                     <ChevronDown size={20} />
                   </DropdownMenuTrigger>
                   <DropdownMenuContent className='min-w-[10rem]'>
-                    <DropdownMenuItem className='gap-3 text-base'>
-                      <PartyPopper size={19} />
-                      <span>Popular</span>
+                    <DropdownMenuItem asChild className='text-base'>
+                      <Link
+                        className='flex items-center gap-3'
+                        href={`/movie?category=popular`}
+                      >
+                        <PartyPopper size={19} />
+                        <span>Popular</span>
+                      </Link>
                     </DropdownMenuItem>
-                    <DropdownMenuItem className='gap-3 text-base'>
-                      <Play size={19} />
-                      <span>Now Playing</span>
+                    <DropdownMenuItem asChild className='text-base'>
+                      <Link
+                        className='flex items-center gap-3'
+                        href={`/movie?category=now_playing`}
+                      >
+                        <Play size={19} />
+                        <span>Now Playing</span>
+                      </Link>
                     </DropdownMenuItem>
-                    <DropdownMenuItem className='gap-3 text-base'>
-                      <CalendarDays size={19} />
-                      <span>Upcoming</span>
+                    <DropdownMenuItem asChild className='text-base'>
+                      <Link
+                        className='flex items-center gap-3'
+                        href={`/movie?category=upcoming`}
+                      >
+                        <CalendarDays size={19} />
+                        <span>Upcoming</span>
+                      </Link>
                     </DropdownMenuItem>
-                    <DropdownMenuItem className='gap-3 text-base'>
-                      <TrendingUp size={19} />
-                      <span>Top Rated</span>
+                    <DropdownMenuItem asChild className='text-base'>
+                      <Link
+                        className='flex items-center gap-3'
+                        href={`/movie?category=top_rated`}
+                      >
+                        <TrendingUp size={19} />
+                        <span>Top Rated</span>
+                      </Link>
                     </DropdownMenuItem>
                   </DropdownMenuContent>
                 </DropdownMenu>
@@ -75,21 +95,41 @@ function Header() {
                     <ChevronDown size={20} />
                   </DropdownMenuTrigger>
                   <DropdownMenuContent className='min-w-[10rem]'>
-                    <DropdownMenuItem className='gap-3 text-base'>
-                      <PartyPopper size={19} />
-                      <span>Popular</span>
+                    <DropdownMenuItem asChild className='text-base'>
+                      <Link
+                        className='flex items-center gap-3'
+                        href={`/tv?category=popular`}
+                      >
+                        <PartyPopper size={19} />
+                        <span>Popular</span>
+                      </Link>
                     </DropdownMenuItem>
-                    <DropdownMenuItem className='gap-3 text-base'>
-                      <Play size={19} />
-                      <span>Airing Today</span>
+                    <DropdownMenuItem asChild className='text-base'>
+                      <Link
+                        className='flex items-center gap-3'
+                        href={`/tv?category=airing_today`}
+                      >
+                        <Play size={19} />
+                        <span>Airing Today</span>
+                      </Link>
                     </DropdownMenuItem>
-                    <DropdownMenuItem className='gap-3 text-base'>
-                      <Tv size={19} />
-                      <span>On TV</span>
+                    <DropdownMenuItem asChild className='text-base'>
+                      <Link
+                        className='flex items-center gap-3'
+                        href={`/tv?category=on_the_air`}
+                      >
+                        <CalendarDays size={19} />
+                        <span>On TV</span>
+                      </Link>
                     </DropdownMenuItem>
-                    <DropdownMenuItem className='gap-3 text-base'>
-                      <TrendingUp size={19} />
-                      <span>Top Rated</span>
+                    <DropdownMenuItem asChild className='text-base'>
+                      <Link
+                        className='flex items-center gap-3'
+                        href={`/tv?category=top_rated`}
+                      >
+                        <TrendingUp size={19} />
+                        <span>Top Rated</span>
+                      </Link>
                     </DropdownMenuItem>
                   </DropdownMenuContent>
                 </DropdownMenu>
