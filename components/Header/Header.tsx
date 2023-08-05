@@ -1,7 +1,16 @@
 import Image from 'next/image'
 import Container from '../Container'
 import Link from 'next/link'
-import { ChevronDown, Menu, SearchIcon } from 'lucide-react'
+import {
+  CalendarDays,
+  ChevronDown,
+  Menu,
+  PartyPopper,
+  Play,
+  SearchIcon,
+  TrendingUp,
+  Tv,
+} from 'lucide-react'
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -39,18 +48,22 @@ function Header() {
                   <DropdownMenuTrigger>
                     <ChevronDown size={20} />
                   </DropdownMenuTrigger>
-                  <DropdownMenuContent className='min-w-[9rem]'>
-                    <DropdownMenuItem className='text-base'>
-                      Popular
+                  <DropdownMenuContent className='min-w-[10rem]'>
+                    <DropdownMenuItem className='gap-3 text-base'>
+                      <PartyPopper size={19} />
+                      <span>Popular</span>
                     </DropdownMenuItem>
-                    <DropdownMenuItem className='text-base'>
-                      Now Playing
+                    <DropdownMenuItem className='gap-3 text-base'>
+                      <Play size={19} />
+                      <span>Now Playing</span>
                     </DropdownMenuItem>
-                    <DropdownMenuItem className='text-base'>
-                      Upcoming
+                    <DropdownMenuItem className='gap-3 text-base'>
+                      <CalendarDays size={19} />
+                      <span>Upcoming</span>
                     </DropdownMenuItem>
-                    <DropdownMenuItem className='text-base'>
-                      Top Rated
+                    <DropdownMenuItem className='gap-3 text-base'>
+                      <TrendingUp size={19} />
+                      <span>Top Rated</span>
                     </DropdownMenuItem>
                   </DropdownMenuContent>
                 </DropdownMenu>
@@ -61,18 +74,22 @@ function Header() {
                   <DropdownMenuTrigger>
                     <ChevronDown size={20} />
                   </DropdownMenuTrigger>
-                  <DropdownMenuContent className='min-w-[9rem]'>
-                    <DropdownMenuItem className='text-base'>
-                      Popular
+                  <DropdownMenuContent className='min-w-[10rem]'>
+                    <DropdownMenuItem className='gap-3 text-base'>
+                      <PartyPopper size={19} />
+                      <span>Popular</span>
                     </DropdownMenuItem>
-                    <DropdownMenuItem className='text-base'>
-                      Airing Today
+                    <DropdownMenuItem className='gap-3 text-base'>
+                      <Play size={19} />
+                      <span>Airing Today</span>
                     </DropdownMenuItem>
-                    <DropdownMenuItem className='text-base'>
-                      On TV
+                    <DropdownMenuItem className='gap-3 text-base'>
+                      <Tv size={19} />
+                      <span>On TV</span>
                     </DropdownMenuItem>
-                    <DropdownMenuItem className='text-base'>
-                      Top Rated
+                    <DropdownMenuItem className='gap-3 text-base'>
+                      <TrendingUp size={19} />
+                      <span>Top Rated</span>
                     </DropdownMenuItem>
                   </DropdownMenuContent>
                 </DropdownMenu>
