@@ -55,6 +55,8 @@ export default async function Movies({
   const data = await getMovies(searchParams)
   const genres = await getGenres()
 
+  let { page } = searchParams
+
   if (!data.results) {
     return (
       <Container>
@@ -72,7 +74,10 @@ export default async function Movies({
             <FilterSidebar genres={genres.genres} />
           </div>
           <div className='overflow-y-auto xl:col-span-3'>
-            <ContentList content={data.results} />
+            <ContentList
+              content={data.results}
+              curr_page={page ? Number.parseInt(page) : 1}
+            />
           </div>
         </div>
       </Container>

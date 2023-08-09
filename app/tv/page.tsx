@@ -38,6 +38,8 @@ export default async function TVShows({
   const data = await getTVShows(searchParams)
   const genres = await getGenres()
 
+  let { page } = searchParams
+
   if (!data.results) {
     return (
       <Container>
@@ -55,7 +57,10 @@ export default async function TVShows({
             <FilterSidebar genres={genres.genres} />
           </div>
           <div className='overflow-y-auto xl:col-span-3'>
-            <ContentList content={data.results} />
+            <ContentList
+              content={data.results}
+              curr_page={page ? Number.parseInt(page) : 1}
+            />
           </div>
         </div>
       </Container>

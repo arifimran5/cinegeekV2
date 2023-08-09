@@ -4,15 +4,63 @@ import { type Content } from '@/utils/types'
 import Image from 'next/image'
 import { BarChart2 } from 'lucide-react'
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
+import { usePathname, useSearchParams, useRouter } from 'next/navigation'
+import { useCallback } from 'react'
 
-function ContentList({ content }: { content: Content[] }) {
+function ContentList({
+  content,
+  curr_page,
+}: {
+  content: Content[]
+  curr_page: number
+}) {
+  const router = useRouter()
+  const pathname = usePathname()
+  const searchParams = useSearchParams()!
+  const isLastPage = curr_page === 500
+  const isFirstPage = curr_page === 1
+
+  const createQueryString = useCallback(
+    (name: string, value: string) => {
+      const params = new URLSearchParams(searchParams.toString())
+      params.set(name, value)
+
+      return params.toString()
+    },
+    [searchParams]
+  )
+
   return (
-    <div className='grid grid-cols-2 justify-items-center gap-x-2 gap-y-4 md:grid-cols-3 lg:grid-cols-4 lg:gap-x-3 lg:gap-y-3'>
-      {content.map((co) => (
-        <Card key={co.id} content={co} />
-      ))}
-    </div>
+    <section>
+      <div className='grid grid-cols-2 justify-items-center gap-x-2 gap-y-4 md:grid-cols-3 lg:grid-cols-4 lg:gap-x-3 lg:gap-y-3'>
+        {content.map((co) => (
+          <Card key={co.id} content={co} />
+        ))}
+      </div>
+
+      <div className='float-right py-2 space-x-2'>
+        <Link
+          href={pathname + '?' + createQueryString('page', `${curr_page - 1}`)}
+        >
+          <button
+            disabled={isFirstPage}
+            className='p-2 mt-4 w-32 rounded-md bg-primary text-white ring-[2px] ring-gray-200/30 shadow disabled:bg-gray-300 disabled:cursor-not-allowed'
+          >
+            Prev
+          </button>
+        </Link>
+        <Link
+          href={pathname + '?' + createQueryString('page', `${curr_page + 1}`)}
+        >
+          <button
+            disabled={isLastPage}
+            className='p-2 mt-4 w-32 rounded-md bg-accent ring-[2px] ring-gray-200/30 shadow disabled:bg-gray-300 disabled:cursor-not-allowed'
+          >
+            Next
+          </button>
+        </Link>
+      </div>
+    </section>
   )
 }
 

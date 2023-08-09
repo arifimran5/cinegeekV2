@@ -48,14 +48,14 @@ function FilterSidebar({ genres }: { genres: Array<Genre> }) {
   }
 
   return (
-    <div className='sticky top-4 h-[90vh] border-2 border-gray-100 px-4 py-4 rounded-md w-72'>
+    <div className='sticky top-4 h-[90vh] border-2 border-gray-100 px-4 py-4 rounded-md'>
       <h2 className='text-2xl capitalize'>{pathname.substring(1)}</h2>
       <form className='mt-4'>
         {/* Sort Select Menu */}
         <div className='flex items-center gap-4 pb-4 border-b-2 border-gray-100'>
           <span className='text-gray-400'>Sort By</span>
           <Select value={sortBy} onValueChange={setSortBy}>
-            <SelectTrigger className='w-[180px] h-8'>
+            <SelectTrigger className='w-[165px] h-8'>
               <SelectValue placeholder='Popularity' />
             </SelectTrigger>
             <SelectContent className='shadow-md'>
