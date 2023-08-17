@@ -15,6 +15,10 @@ import { useState, ReactNode } from 'react'
 function MobileHeader({ children }: { children: ReactNode }) {
   const [open, setOpen] = useState(false)
 
+  function handleClose() {
+    setOpen(false)
+  }
+
   return (
     <div className='md:hidden'>
       <button onClick={() => setOpen(!open)}>
@@ -28,6 +32,7 @@ function MobileHeader({ children }: { children: ReactNode }) {
             <div className='pl-4'>
               <p className='py-2 border-b-[1px] hover:bg-white/50 transition-all duration-100 hover:pl-1 border-gray-300/80 cursor-pointer'>
                 <Link
+                  onClick={handleClose}
                   className='flex items-center gap-3'
                   href={`/movie?category=popular`}
                 >
@@ -37,6 +42,7 @@ function MobileHeader({ children }: { children: ReactNode }) {
               </p>
               <p className='py-2 border-b-[1px] hover:bg-white/50 transition-all duration-100 hover:pl-1 border-gray-300/80 cursor-pointer'>
                 <Link
+                  onClick={handleClose}
                   className='flex items-center gap-3'
                   href={`/movie?category=now_playing`}
                 >
@@ -46,6 +52,7 @@ function MobileHeader({ children }: { children: ReactNode }) {
               </p>
               <p className='py-2 border-b-[1px] hover:bg-white/50 transition-all duration-100 hover:pl-1 border-gray-300/80 cursor-pointer'>
                 <Link
+                  onClick={handleClose}
                   className='flex items-center gap-3'
                   href={`/movie?category=upcoming`}
                 >
@@ -55,6 +62,7 @@ function MobileHeader({ children }: { children: ReactNode }) {
               </p>
               <p className='py-2 border-b-[1px] hover:bg-white/50 transition-all duration-100 hover:pl-1 border-gray-300/80 cursor-pointer'>
                 <Link
+                  onClick={handleClose}
                   className='flex items-center gap-3'
                   href={`/movie?category=top_rated`}
                 >
@@ -69,6 +77,7 @@ function MobileHeader({ children }: { children: ReactNode }) {
             <div className='pl-4'>
               <p className='py-2 border-b-[1px] hover:bg-white/50 transition-all duration-100 hover:pl-1 border-gray-300/80 cursor-pointer'>
                 <Link
+                  onClick={handleClose}
                   className='flex items-center gap-3'
                   href={`/tv?category=popular`}
                 >
@@ -78,6 +87,7 @@ function MobileHeader({ children }: { children: ReactNode }) {
               </p>
               <p className='py-2 border-b-[1px] hover:bg-white/50 transition-all duration-100 hover:pl-1 border-gray-300/80 cursor-pointer'>
                 <Link
+                  onClick={handleClose}
                   className='flex items-center gap-3'
                   href={`/tv?category=airing_today`}
                 >
@@ -87,6 +97,7 @@ function MobileHeader({ children }: { children: ReactNode }) {
               </p>
               <p className='py-2 border-b-[1px] hover:bg-white/50 transition-all duration-100 hover:pl-1 border-gray-300/80 cursor-pointer'>
                 <Link
+                  onClick={handleClose}
                   className='flex items-center gap-3'
                   href={`/tv?category=on_the_air`}
                 >
@@ -96,6 +107,7 @@ function MobileHeader({ children }: { children: ReactNode }) {
               </p>
               <p className='py-2 border-b-[1px] hover:bg-white/50 transition-all duration-100 hover:pl-1 border-gray-300/80 cursor-pointer'>
                 <Link
+                  onClick={handleClose}
                   className='flex items-center gap-3'
                   href={`/tv?category=top_rated`}
                 >
@@ -105,15 +117,20 @@ function MobileHeader({ children }: { children: ReactNode }) {
               </p>
             </div>
           </div>
-          <div className='px-4 mt-6'>
-            <div className='flex items-center px-2 py-1 my-4 rounded-md shadow bg-accent md:hidden ring-gray-300/10 ring-1'>
-              <input
+          <div className='float-right px-4 mt-6'>
+            <Link
+              onClick={handleClose}
+              href='/search'
+              className='flex items-center gap-3 md:hidden'
+            >
+              {/* <input
                 type='text'
                 placeholder='Search a Movie or TV'
                 className='w-full px-2 py-1 bg-transparent outline-none placeholder:text-gray-600 placeholder:text-sm'
-              />
-              <SearchIcon size={20} />
-            </div>
+              /> */}
+              Go to search
+              <SearchIcon size={22} />
+            </Link>
           </div>
         </div>
       )}
