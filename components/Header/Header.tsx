@@ -136,14 +136,17 @@ function Header() {
               </div>
             </div>
           </div>
-          <div className='items-center hidden px-2 py-1 rounded-md shadow md:flex ring-gray-300/10 ring-1'>
-            <input
+          <Link className='hidden md:block' href='/search'>
+            {/* <input
               type='text'
               placeholder='Search a Movie or TV'
               className='px-2 py-1 bg-transparent outline-none placeholder:text-gray-500 placeholder:text-sm'
+            /> */}
+            <SearchIcon
+              className='duration-150 cursor-pointer hover:text-accent'
+              size={22}
             />
-            <SearchIcon size={20} />
-          </div>
+          </Link>
 
           <MobileHeader>
             <div className='md:hidden'>
