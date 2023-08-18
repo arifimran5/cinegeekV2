@@ -119,7 +119,7 @@ function MobileHeader({ children }: { children: ReactNode }) {
             </div>
           </div>
           <div className='flex items-center justify-between px-4 mt-6'>
-            <div className='p-2 bg-gray-100 rounded-md dark:bg-gray-600'>
+            <div className='p-2 bg-gray-100 rounded-md dark:bg-gray-700'>
               <ThemeSwitcher />
             </div>
             <Link

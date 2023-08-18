@@ -139,7 +139,7 @@ function Header() {
             </div>
           </div>
           <div className='hidden gap-6 md:flex md:items-center'>
-            <div className='p-[4px] bg-gray-100 rounded-md dark:bg-gray-600'>
+            <div className='p-[4px] bg-gray-100 rounded-md dark:bg-gray-700'>
               <ThemeSwitcher />
             </div>
             <Link href='/search'>
