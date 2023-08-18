@@ -11,6 +11,7 @@ import {
 } from 'lucide-react'
 import Link from 'next/link'
 import { useState, ReactNode } from 'react'
+import ThemeSwitcher from './ThemeSwitcher'
 
 function MobileHeader({ children }: { children: ReactNode }) {
   const [open, setOpen] = useState(false)
@@ -117,11 +118,14 @@ function MobileHeader({ children }: { children: ReactNode }) {
               </p>
             </div>
           </div>
-          <div className='float-right px-4 mt-6'>
+          <div className='flex items-center justify-between px-4 mt-6 '>
+            <div className='px-2 pt-2 bg-gray-100 rounded-md'>
+              <ThemeSwitcher />
+            </div>
             <Link
               onClick={handleClose}
               href='/search'
-              className='flex items-center gap-3 md:hidden'
+              className='flex items-center float-right gap-3 md:hidden'
             >
               {/* <input
                 type='text'

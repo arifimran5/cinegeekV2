@@ -138,9 +138,9 @@ function Header() {
               </div>
             </div>
           </div>
-          <div className='flex items-start gap-4'>
+          <div className='hidden gap-4 md:flex md:items-start'>
             <ThemeSwitcher />
-            <Link className='hidden md:block' href='/search'>
+            <Link href='/search'>
               {/* <input
               type='text'
               placeholder='Search a Movie or TV'

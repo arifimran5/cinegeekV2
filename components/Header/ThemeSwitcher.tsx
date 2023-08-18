@@ -1,6 +1,6 @@
 'use client'
 
-import { Monitor, Moon, Sun } from 'lucide-react'
+import { Monitor, Moon, Sun, SunMoon } from 'lucide-react'
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -15,8 +15,8 @@ export default function ThemeSwitcher() {
   return (
     <div>
       <DropdownMenu>
-        <DropdownMenuTrigger>
-          <Sun size={20} />
+        <DropdownMenuTrigger asChild>
+          <SunMoon size={20} />
         </DropdownMenuTrigger>
         <DropdownMenuContent>
           <DropdownMenuItem onClick={() => setTheme('light')} className='gap-2'>
