@@ -13,7 +13,7 @@ export default function ThemeSwitcher() {
   const { setTheme } = useTheme()
 
   return (
-    <div>
+    <div className='cursor-pointer'>
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
           <SunMoon size={20} />
@@ -36,7 +36,6 @@ export default function ThemeSwitcher() {
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
-      <button></button>
     </div>
   )
 }

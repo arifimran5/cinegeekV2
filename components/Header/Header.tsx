@@ -138,8 +138,10 @@ function Header() {
               </div>
             </div>
           </div>
-          <div className='hidden gap-4 md:flex md:items-start'>
-            <ThemeSwitcher />
+          <div className='hidden gap-6 md:flex md:items-center'>
+            <div className='p-[4px] bg-gray-100 rounded-md dark:bg-gray-600'>
+              <ThemeSwitcher />
+            </div>
             <Link href='/search'>
               {/* <input
               type='text'
