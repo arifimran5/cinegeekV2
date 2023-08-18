@@ -2,6 +2,7 @@ import { cn } from '@/utils/helper'
 import './globals.css'
 import { Inter } from 'next/font/google'
 import Header from '@/components/Header/Header'
+import GlobalContextProvider from '@/components/GlobalContextProvider'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -18,9 +19,11 @@ export default function RootLayout({
   return (
     <html lang='en' suppressHydrationWarning>
       <body className={cn(inter.className, '')}>
-        {/* Navigation */}
-        <Header />
-        {children}
+        <GlobalContextProvider>
+          {/* Navigation */}
+          <Header />
+          {children}
+        </GlobalContextProvider>
       </body>
     </html>
   )

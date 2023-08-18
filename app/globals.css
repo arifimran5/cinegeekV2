@@ -13,7 +13,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 47.4% 11.2%;
 
-    --border: 214.3 31.8% 91.4%;
+    --border: 214, 30%, 91%, 0.398;
     --input: 214.3 31.8% 91.4%;
 
     --card: 0 0% 100%;
@@ -31,7 +31,7 @@
     --destructive: 0 100% 50%;
     --destructive-foreground: 210 40% 98%;
 
-    --ring: 215 20.2% 65.1%;
+    /* --ring: (215, 100%, 69%, 0.95; */
 
     --radius: 0.5rem;
   }
@@ -43,8 +43,8 @@
     --muted: 223 47% 11%;
     --muted-foreground: 215.4 16.3% 56.9%;
 
-    --accent: 216 34% 17%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 341 100% 75%;
+    --accent-foreground: 222.2 47.4% 11.2%;
 
     --popover: 224 71% 4%;
     --popover-foreground: 215 20.2% 65.1%;
@@ -64,7 +64,7 @@
     --destructive: 0 63% 31%;
     --destructive-foreground: 210 40% 98%;
 
-    --ring: 216 34% 17%;
+    /* --ring: 216 34% 17%; */
 
     --radius: 0.5rem;
   }
@@ -77,5 +77,11 @@
   body {
     @apply bg-background text-foreground;
     font-feature-settings: 'rlig' 1, 'calt' 1;
+  }
+}
+
+@layer components {
+  .text-shadow {
+    text-shadow: 0px 1px 0px #00000020;
   }
 }

@@ -26,11 +26,11 @@ function MobileHeader({ children }: { children: ReactNode }) {
         {open && <X />}
       </button>
       {open && (
-        <div className='fixed animate-in duration-200 fade-in slide-in-from-top top-[4rem] pb-4 left-0 w-full bg-white/95  backdrop-blur-sm'>
+        <div className='fixed animate-in duration-200 fade-in slide-in-from-top top-[4rem] pb-4 left-0 w-full bg-background  backdrop-blur-sm'>
           <div className='px-4 mt-2'>
             <h3 className='font-medium'>Movies</h3>
             <div className='pl-4'>
-              <p className='py-2 border-b-[1px] hover:bg-white/50 transition-all duration-100 hover:pl-1 border-gray-300/80 cursor-pointer'>
+              <p className='py-2 border-b-[1px] transition-all duration-100 hover:pl-1  cursor-pointer'>
                 <Link
                   onClick={handleClose}
                   className='flex items-center gap-3'
@@ -40,7 +40,7 @@ function MobileHeader({ children }: { children: ReactNode }) {
                   <span>Popular</span>
                 </Link>
               </p>
-              <p className='py-2 border-b-[1px] hover:bg-white/50 transition-all duration-100 hover:pl-1 border-gray-300/80 cursor-pointer'>
+              <p className='py-2 border-b-[1px] transition-all duration-100 hover:pl-1  cursor-pointer'>
                 <Link
                   onClick={handleClose}
                   className='flex items-center gap-3'
@@ -50,7 +50,7 @@ function MobileHeader({ children }: { children: ReactNode }) {
                   <span>Now Playing</span>
                 </Link>
               </p>
-              <p className='py-2 border-b-[1px] hover:bg-white/50 transition-all duration-100 hover:pl-1 border-gray-300/80 cursor-pointer'>
+              <p className='py-2 border-b-[1px] transition-all duration-100 hover:pl-1  cursor-pointer'>
                 <Link
                   onClick={handleClose}
                   className='flex items-center gap-3'
@@ -60,7 +60,7 @@ function MobileHeader({ children }: { children: ReactNode }) {
                   <span>Upcoming</span>
                 </Link>
               </p>
-              <p className='py-2 border-b-[1px] hover:bg-white/50 transition-all duration-100 hover:pl-1 border-gray-300/80 cursor-pointer'>
+              <p className='py-2 border-b-[1px] transition-all duration-100 hover:pl-1  cursor-pointer'>
                 <Link
                   onClick={handleClose}
                   className='flex items-center gap-3'
@@ -75,7 +75,7 @@ function MobileHeader({ children }: { children: ReactNode }) {
           <div className='px-4 mt-4'>
             <h3 className='font-medium'>TV Shows</h3>
             <div className='pl-4'>
-              <p className='py-2 border-b-[1px] hover:bg-white/50 transition-all duration-100 hover:pl-1 border-gray-300/80 cursor-pointer'>
+              <p className='py-2 border-b-[1px] transition-all duration-100 hover:pl-1  cursor-pointer'>
                 <Link
                   onClick={handleClose}
                   className='flex items-center gap-3'
@@ -85,7 +85,7 @@ function MobileHeader({ children }: { children: ReactNode }) {
                   <span>Popular</span>
                 </Link>
               </p>
-              <p className='py-2 border-b-[1px] hover:bg-white/50 transition-all duration-100 hover:pl-1 border-gray-300/80 cursor-pointer'>
+              <p className='py-2 border-b-[1px] transition-all duration-100 hover:pl-1  cursor-pointer'>
                 <Link
                   onClick={handleClose}
                   className='flex items-center gap-3'
@@ -95,7 +95,7 @@ function MobileHeader({ children }: { children: ReactNode }) {
                   <span>Airing Today</span>
                 </Link>
               </p>
-              <p className='py-2 border-b-[1px] hover:bg-white/50 transition-all duration-100 hover:pl-1 border-gray-300/80 cursor-pointer'>
+              <p className='py-2 border-b-[1px] transition-all duration-100 hover:pl-1  cursor-pointer'>
                 <Link
                   onClick={handleClose}
                   className='flex items-center gap-3'
@@ -105,7 +105,7 @@ function MobileHeader({ children }: { children: ReactNode }) {
                   <span>On TV</span>
                 </Link>
               </p>
-              <p className='py-2 border-b-[1px] hover:bg-white/50 transition-all duration-100 hover:pl-1 border-gray-300/80 cursor-pointer'>
+              <p className='py-2 border-b-[1px] transition-all duration-100 hover:pl-1  cursor-pointer'>
                 <Link
                   onClick={handleClose}
                   className='flex items-center gap-3'

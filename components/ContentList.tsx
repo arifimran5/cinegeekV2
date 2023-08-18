@@ -44,7 +44,7 @@ function ContentList({
         >
           <button
             disabled={isFirstPage}
-            className='p-2 mt-4 w-32 rounded-md bg-primary text-white ring-[2px] ring-gray-200/30 shadow disabled:bg-gray-300 disabled:cursor-not-allowed'
+            className='p-2 mt-4 w-32 rounded-md bg-gray-800 text-gray-50 dark:text-gray-400 dark:bg-transparent ring-[2px] ring-gray-200/30 shadow disabled:bg-gray-300/20 disabled:cursor-not-allowed disabled:text-gray-300'
           >
             Prev
           </button>
@@ -54,7 +54,7 @@ function ContentList({
         >
           <button
             disabled={isLastPage}
-            className='p-2 mt-4 w-32 rounded-md bg-accent ring-[2px] ring-gray-200/30 shadow disabled:bg-gray-300 disabled:cursor-not-allowed'
+            className='p-2 mt-4 w-32 rounded-md bg-accent text-accent-foreground ring-[2px] ring-gray-200/30 shadow disabled:bg-gray-300 disabled:cursor-not-allowed'
           >
             Next
           </button>
@@ -77,7 +77,7 @@ function Card({ content }: { content: Content }) {
   let contentLink = `${pathname}/${content.id}`
   return (
     <Link href={contentLink} className='max-w-[18em]'>
-      <div className='p-4 border-2 border-gray-100 rounded-lg shadow-md '>
+      <div className='p-4 border-2 rounded-lg shadow-md '>
         {!poster_path && <div className='bg-gray-100 h-[15rem]'></div>}
         {poster_path && (
           <Image

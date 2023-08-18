@@ -8,6 +8,7 @@ import {
   PartyPopper,
   Play,
   SearchIcon,
+  Sun,
   TrendingUp,
   Tv,
 } from 'lucide-react'
@@ -18,10 +19,11 @@ import {
   DropdownMenuTrigger,
 } from '../ui/DropDown'
 import MobileHeader from './MobileMenu'
+import ThemeSwitcher from './ThemeSwitcher'
 
 function Header() {
   return (
-    <header className='sticky top-0 shadow-sm bg-white/95 backdrop-blur-sm md:static'>
+    <header className='sticky top-0 shadow-sm bg-background/80 backdrop-blur-sm md:static'>
       <Container>
         <nav className='flex items-center justify-between py-4'>
           <div className='flex items-center gap-8'>
@@ -32,7 +34,7 @@ function Header() {
               <span>cineg</span>
               <span className='inline-block px-[.5px] mt-2'>
                 <Image
-                  src='/logo-eye.png'
+                  src='/eye.png'
                   quality={100}
                   alt='Logo of cinegeek'
                   width={30}
@@ -136,17 +138,20 @@ function Header() {
               </div>
             </div>
           </div>
-          <Link className='hidden md:block' href='/search'>
-            {/* <input
+          <div className='flex items-start gap-4'>
+            <ThemeSwitcher />
+            <Link className='hidden md:block' href='/search'>
+              {/* <input
               type='text'
               placeholder='Search a Movie or TV'
               className='px-2 py-1 bg-transparent outline-none placeholder:text-gray-500 placeholder:text-sm'
             /> */}
-            <SearchIcon
-              className='duration-150 cursor-pointer hover:text-accent'
-              size={22}
-            />
-          </Link>
+              <SearchIcon
+                className='duration-150 cursor-pointer hover:text-accent'
+                size={22}
+              />
+            </Link>
+          </div>
 
           <MobileHeader>
             <div className='md:hidden'>

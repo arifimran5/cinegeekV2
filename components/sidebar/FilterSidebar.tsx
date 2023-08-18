@@ -48,11 +48,11 @@ function FilterSidebar({ genres }: { genres: Array<Genre> }) {
   }
 
   return (
-    <div className='sticky top-4 h-[90vh] border-2 border-gray-100 px-4 py-4 rounded-md'>
+    <div className='sticky top-4 h-[90vh] border-2 px-4 py-4 rounded-md'>
       <h2 className='text-2xl capitalize'>{pathname.substring(1)}</h2>
       <form className='mt-4'>
         {/* Sort Select Menu */}
-        <div className='flex items-center gap-4 pb-4 border-b-2 border-gray-100'>
+        <div className='flex items-center gap-4 pb-4 border-b-2'>
           <span className='text-gray-400'>Sort By</span>
           <Select value={sortBy} onValueChange={setSortBy}>
             <SelectTrigger className='w-[165px] h-8'>
@@ -70,7 +70,7 @@ function FilterSidebar({ genres }: { genres: Array<Genre> }) {
 
         {/* Genres */}
         <span className='inline-block mt-3 text-gray-400'>Genres</span>
-        <div className='flex flex-wrap items-center pb-4 mt-2 border-b-2 border-gray-100 gap-x-2 gap-y-1'>
+        <div className='flex flex-wrap items-center pb-4 mt-2 border-b-2 gap-x-2 gap-y-1'>
           {genres.map((g) => (
             <button
               type='button'
@@ -78,7 +78,7 @@ function FilterSidebar({ genres }: { genres: Array<Genre> }) {
               onClick={() => handleGenreSelect(g.id)}
               className={cn(
                 'px-3 h-8 cursor-pointer text-sm border-[1px] border-input rounded-md',
-                'data-[active=true]:bg-accent data-[active=true]:font-medium'
+                'data-[active=true]:bg-accent data-[active=true]:text-accent-foreground'
               )}
               key={g.id}
             >
@@ -89,17 +89,17 @@ function FilterSidebar({ genres }: { genres: Array<Genre> }) {
 
         {/* Release Date */}
         <span className='inline-block mt-3 text-gray-400'>Release Date</span>
-        <div className='pb-4 mt-2 border-b-2 border-gray-100'></div>
+        <div className='pb-4 mt-2 border-b-2 '></div>
 
         {/* Language */}
         <span className='inline-block mt-3 text-gray-400'>Language</span>
-        <div className='pb-4 mt-2 border-b-2 border-gray-100'></div>
+        <div className='pb-4 mt-2 border-b-2 '></div>
 
         {/* submit button */}
         <button
           onClick={handleSearch}
           type='submit'
-          className='w-full p-2 mt-4 rounded-md bg-accent ring-[2px] ring-gray-200/30 shadow'
+          className='w-full p-2 mt-4 bg-accent rounded-md border-[1.5px] border-[#ff9aba]  text-accent-foreground shadow-[inset_0px_1px_#ffffff66] bg-gradient-to-b from-[#ff98b9] to-[#ff6898] text-shadow hover:from-[#ff6898] hover:to-[#ff98b9]'
         >
           Search
         </button>
