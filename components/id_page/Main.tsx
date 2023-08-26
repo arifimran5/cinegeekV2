@@ -1,3 +1,5 @@
+'use client'
+
 import { Content } from '@/utils/types'
 import Container from '../Container'
 import Image from 'next/image'
