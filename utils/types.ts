@@ -15,4 +15,14 @@ export type Content = {
   vote_count: number
   name?: string
   first_air_date?: string
+  last_air_date?: string
+  genres?: [{ id: number, name: string }]
+  homepage?: string
+  imdb_id?: string
+  revenue?: number
+  budget?: number
+  runtime?: number
+  tagline?: string
+  number_of_episodes?: number
+  number_of_seasons?: number
 }
