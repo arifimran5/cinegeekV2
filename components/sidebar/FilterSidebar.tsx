@@ -55,7 +55,7 @@ function FilterSidebar({ genres }: { genres: Array<Genre> }) {
         <div className='flex items-center gap-4 pb-4 border-b-2'>
           <span className='text-gray-400'>Sort By</span>
           <Select value={sortBy} onValueChange={setSortBy}>
-            <SelectTrigger className='w-[165px] h-8'>
+            <SelectTrigger className='w-[165px] h-8 shadow-sm'>
               <SelectValue placeholder='Popularity' />
             </SelectTrigger>
             <SelectContent className='shadow-md'>
@@ -78,7 +78,8 @@ function FilterSidebar({ genres }: { genres: Array<Genre> }) {
               onClick={() => handleGenreSelect(g.id)}
               className={cn(
                 'px-3 h-8 cursor-pointer text-sm border-[1px] border-input rounded-md',
-                'data-[active=true]:bg-accent data-[active=true]:text-accent-foreground'
+                'data-[active=true]:bg-accent data-[active=true]:text-accent-foreground',
+                'shadow-sm'
               )}
               key={g.id}
             >
